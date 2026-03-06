@@ -1,485 +1,647 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <title>Resume - Hadi REZAEE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Hadi REZAEE - Software Architect at Austrian Airlines. 15+ years in software development and architecture."/>
+    <meta name="author" content="Hadi REZAEE"/>
+    <title>Hadi REZAEE - Software Architect</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-            crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700"
-          rel="stylesheet"
-          type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
-          rel="stylesheet"
-          type="text/css"/>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#6366f1',
+                        'accent-light': '#818cf8',
+                        'accent-dim': '#4338ca',
+                        surface: '#0f172a',
+                        'surface-2': '#1e293b',
+                        'surface-3': '#263249',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/styles.css"/>
 </head>
-<body id="page-top">
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
-     id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Hadi REZAEE</span>
-        <span class="d-none d-lg-block">
-            <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-                 src="assets/img/profile.jpg"
-                 alt="..."/>
-        </span>
-    </a>
-    <button class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<body class="bg-surface text-slate-300 font-sans antialiased">
+
+<!-- Mobile Header -->
+<header class="lg:hidden fixed top-0 left-0 right-0 z-50 bg-surface-2/95 backdrop-blur border-b border-slate-700/50 px-4 py-3 flex items-center justify-between">
+    <span class="font-bold text-white text-lg tracking-wide">Hadi REZAEE</span>
+    <button id="menu-toggle" class="text-slate-400 hover:text-white transition-colors p-1" aria-label="Toggle menu">
+        <i class="fas fa-bars text-xl"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#experience">
-                    Experience
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#education">
-                    Education
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#interests">
-                    Interests
-                </a>
-            </li>
-            <!--<li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-            </li>-->
-        </ul>
-    </div>
-</nav>
-<!-- Page Content-->
-<div class="container-fluid p-0">
-<!-- About-->
-<section class="resume-section" id="about">
-    <div class="resume-section-content">
-        <h1 class="mb-0">
-            Hadi
-            <span class="text-primary">REZAEE</span>
-        </h1>
-        <div class="subheading mb-5">
-            1030 Vienna, Austria
-            <!--<a href="mailto:name@email.com">myemail@willbesoonhere.com</a>-->
-        </div>
-        <p class="lead mb-5">
-            Technical Strategist | Problem Solver | Lifelong Learner<br/>
+</header>
 
-With 15+ years experience in software development and architecture and a Master’s in Computer Software Engineering, I’m passionate about designing efficient, high-quality solutions to complex problems.
-As a Software Architect at Austrian Airlines, I contribute to innovative, high-impact projects with a technology-agnostic mindset, adapting quickly to new tools to deliver the best outcomes.
-Always eager to learn, share knowledge, and tackle challenges that push the boundaries of technology.
-
-        </p>
-        <div class="social-icons">
-            <a class="social-icon"
-               target="_blank"
-               href="https://www.linkedin.com/in/hadirezaee/">
-                <i class="fab fa-linkedin-in">
-                </i>
-            </a>
-            <a class="social-icon"
-               target="_blank"
-               href="https://github.com/mhrezaee">
-                <i class="fab fa-github">
-                </i>
-            </a>
-            <a class="social-icon"
-               target="_blank"
-               href="https://twitter.com/DevRezaee">
-                <i class="fab fa-twitter">
-                </i>
-            </a>
-            <a class="social-icon"
-               target="_blank"
-               href="https://www.facebook.com/m.hadi.rezaee/">
-                <i class="fab fa-facebook-f">
-                </i>
-            </a>
+<!-- Mobile Nav Overlay -->
+<div id="mobile-menu" class="lg:hidden fixed inset-0 z-40 hidden">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="menu-backdrop"></div>
+    <nav class="absolute left-0 top-0 bottom-0 w-72 bg-surface-2 border-r border-slate-700/50 flex flex-col pt-20 pb-8 px-6">
+        <div class="flex flex-col items-center mb-8">
+            <img src="assets/img/profile.jpg" alt="Hadi REZAEE" class="w-20 h-20 rounded-full ring-2 ring-accent/60 object-cover mb-3"/>
+            <span class="text-white font-semibold">Hadi REZAEE</span>
+            <span class="text-slate-400 text-sm mt-0.5">Software Architect</span>
         </div>
-    </div>
-</section>
-<hr class="m-0"/>
-<!-- Experience-->
-<section class="resume-section" id="experience">
-    <div class="resume-section-content">
-        <h2 class="mb-5">Experience</h2>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">Software Architect</h3>
-                <div class="subheading mb-3">Austrian Airlines (Vienna, Austria)</div>
-                <p>
-                    Software Architect responsible for designing scalable, secure, and high-performance systems aligned with business objectives.
-                     Led cross-functional teams, defined architectural standards, and drove technical decisions across the full software development lifecycle.
-                    <ul>
-    <span>Architecture & Technical Leadership:</span>
-    <li>Designed scalable, cloud-native architectures using Microsoft Azure</li>
-    <li>Defined system design standards, best practices, and coding guidelines</li>
-    <li>Led architectural reviews and technical decision-making across teams</li>
-    <li>Implemented Services and RESTful APIs using ASP.NET Core</li>
-</ul>
-
-<ul>
-    <span>Cloud & DevOps:</span>
-    <li>Architected Azure-based solutions </li>
-    <li>Designed CI/CD pipelines and automated deployment strategies</li>
-    <li>Implemented monitoring, logging, and performance optimization strategies</li>
-</ul>
-
-<ul>
-    <span>Technology Stack:</span>
-    <li>C#, .NET Core, ASP.NET MVC, Web API</li>
-    <li>Azure Cloud Services, Azure DevOps</li>
-    <li>Angular, TypeScript, JavaScript</li>
-    <li>SQL Server, T-SQL</li>
-</ul>
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-primary">April 2025 - Present</span>
-            </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">Fullstack Software Developer</h3>
-                <div class="subheading mb-3">Austrian Airlines (Vienna, Austria)</div>
-                <p>
-                    Fullstack Software Developer responsible for developing and maintaining applications, collaborating with cross-functional teams,
-                     and ensuring high-quality code. Participated in the full software development lifecycle, from requirement analysis to deployment.
-                    <ul>
-                        <span>Techs and Languages:</span>
-                        <li>C#, .NET Core, ASP.NET MVC, Web API</li>
-    <li>Azure Cloud Services, Azure DevOps</li>
-    <li>Angular, TypeScript, JavaScript</li>
-    <li>SQL Server, T-SQL</li>
-                    </ul>
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-primary">July 2023 - April 2025</span>
-            </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">Senior Software Developer</h3>
-                <div class="subheading mb-3">Austrian Post (Vienna, Austria)</div>
-                <p>
-                    Working on the core applications in the area of delivery systems
-                    of Austrian Post, on a wide range of technologies, from
-                    maintaining and dealing with legacy projects to fresh, new, and
-                    greenfield ones.
-                    <ul>
-                        <span>Techs and Languages:</span>
-                        <li>Both Cloud (Microsoft Azure) and on-premises solutions</li>
-                        <li>C#, T-SQL, Javascript, Typescript, HTML, CSS</li>
-                        <li>WCF, Web API (REST), ASP.NET Web Forms, ASP.NET MVC, ASP.NET Core</li>
-                        <li>React, Knockout js, JQuery, Bootstrap, Kendo UI</li>
-                    </ul>
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-primary">August 2021 - July 2023</span>
-            </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">Tech Lead</h3>
-                <div class="subheading mb-3">Nativy translations (Vienna, Austria)</div>
-                <p>
-                    As CTO in Nativy Translations:
-                    Manage and maintain 3rd party services used in projects (ex: Godaddy, SiteGround, AWS, etc)
-                    Manage applications on Microsoft Azure (AppServices, Virtual Machines, storage, and SQL Server)
-                    Code Review Responsible
-                    Participate in developing new features from the requirement to design and implementation
-                    Deployment circle using Azure DevOps (CI/CD) from branching strategy to build and publish on diﬀerent staging and production environments.
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-primary">July 2020 - July 2021</span>
-            </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">Software Developer</h3>
-                <div class="subheading mb-3">Nativy Translations (Vienna, Austria)</div>
-                <p>
-                    As a Software Developer in Nativy, my tasks were:
-                    Implement and develop new features
-                    Maintain and optimize the developed sections (as the main project was legacy)
-                    Providing solutions for the best possible implementation
-                    Document technical parts
-                    Participate in diﬀerent sections and meetings from the requirement to design and development, also testing and documentation
-                    <ul>
-                        <span>Technologies:</span>
-                        <li>ASP.NET Web API</li>
-                        <li>SQL-Server</li>
-                        <li>Entity Framework</li>
-                        <li>Selenium, Xunit, Specﬂow</li>
-                        <li>Knockoutjs</li>
-                        <li>Html, CSS, Bootstrap, jQuery, JavaScript</li>
-                    </ul>
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-primary">August 2018 - June 2020</span>
-            </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">Senior Software Developer</h3>
-                <div class="subheading mb-3">Fidilio (Tehran, Iran)</div>
-                <p>
-                    As a Senior Software Developer I was responsible for:
-                    Develop new features with other team members through Agile methodology
-                    Find solutions for upcoming issues
-                    R&D responsible for using other technologies in projects (ex: Migrating to .NET Core, Dapper, Branching
-                    strategy and versioning, CI/CD process in Jenkins, fast search using Algolia, etc)
-                    Collaborating with the product owner on new features.
-                    Code Review responsible
-                    <ul>
-                        <span>Technologies:</span>
-                        <li>ASP.NET Core - ASP.NET MVC</li>
-                        <li>SQL-Server</li>
-                        <li>Web API</li>
-                        <li>EF, Dapper</li>
-                        <li>Angular</li>
-                        <li>Html, CSS, Bootstrap, jQuery, JavaScript</li>
-                    </ul>
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-primary">August 2016 - August 2018</span>
-            </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">Software Developer</h3>
-                <div class="subheading mb-3">Hamrad (Karaj, Iran)</div>
-                <p>
-                    As a Software Developer:
-                    I joined in the development of different web applications for clients which most were in the online shopping area.
-                    <ul>
-                        <span>Technologies and Languages:</span>
-                        <li>C#</li>
-                        <li>ASP.NET MVC and Web API</li>
-                        <li>SQL Server</li>
-                        <li>Html, Css, Javascript and jQuery</li>
-                    </ul>
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-primary">February 2015 - July 2016</span>
-            </div>
-        </div>
-    </div>
-</section>
-<hr class="m-0"/>
-<!-- Education-->
-<section class="resume-section" id="education">
-    <div class="resume-section-content">
-        <h2 class="mb-5">Education</h2>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">Karaj Azad University (KIAU)</h3>
-                <div class="subheading mb-3">Bachelor of Science</div>
-                <div>Software Engineering</div>
-                <!--<p></p>-->
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-primary">2010 - 2013</span>
-            </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">Karaj Azad University (KIAU)</h3>
-                <div class="subheading mb-3">Master of Science</div>
-                <div>Software Engineering - Data Management</div>
-                <!--<p></p>-->
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-primary">2016 - 2018</span>
-            </div>
-        </div>
-    </div>
-</section>
-<hr class="m-0"/>
-<!-- Skills-->
-<section class="resume-section" id="skills">
-    <div class="resume-section-content">
-        <h2 class="mb-5">Skills</h2>
-        <div class="subheading mb-3">Programming Languages & Tools</div>
-        <ul class="list-inline dev-icons">
-            <li class="list-inline-item">
-                C#
-            </li>
-            <li class="list-inline-item">
-                SQL
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-html5"></i>
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-css3-alt"></i>
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-js-square"></i>
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-angular"></i>
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-react"></i>
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-github"></i>
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-sass"></i>
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-less"></i>
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-npm"></i>
-            </li>
-            <li class="list-inline-item">
-                <i class="fab fa-git-square"></i>
-            </li>
+        <ul class="space-y-1 flex-1">
+            <li><a href="#about" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/50 transition-all"><i class="fas fa-user w-4 text-accent text-sm"></i> About</a></li>
+            <li><a href="#experience" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/50 transition-all"><i class="fas fa-briefcase w-4 text-accent text-sm"></i> Experience</a></li>
+            <li><a href="#education" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/50 transition-all"><i class="fas fa-graduation-cap w-4 text-accent text-sm"></i> Education</a></li>
+            <li><a href="#skills" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/50 transition-all"><i class="fas fa-code w-4 text-accent text-sm"></i> Skills</a></li>
+            <li><a href="#interests" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/50 transition-all"><i class="fas fa-heart w-4 text-accent text-sm"></i> Interests</a></li>
         </ul>
-        <div class="subheading mb-3">Workflow</div>
-        <ul class="fa-ul mb-0">
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-check"></i>
-                </span>
-                Clean Code, Design Patterns
-            </li>
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-check"></i>
-                </span>
-                Cross Functional Teams
-            </li>
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-check"></i>
-                </span>
-                Agile Development & Scrum
-            </li>
-        </ul>
-    </div>
-</section>
-<hr class="m-0"/>
-<!-- Interests-->
-<section class="resume-section" id="interests">
-    <div class="resume-section-content">
-        <h2 class="mb-5">Interests</h2>
-        <p>
-            Apart from being a developer, I enjoy most of my time learning new skills.
-            I also watch movies, and learn new language (currently German)
-            and after work you can find me either in Gym or in a coffee shop.
-        </p>
-        <p class="mb-0">
-            I am not a good chess player but I enjoy sometimes play chess and listen to classical musics.
-        </p>
-    </div>
-</section>
-<hr class="m-0"/>
-<!-- Awards-->
-<!--<section class="resume-section" id="awards">
-    <div class="resume-section-content">
-        <h2 class="mb-5">Awards & Certifications</h2>
-        <ul class="fa-ul mb-0">
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-trophy text-warning">
-                    </i>
-                </span>
-                Google Analytics Certified Developer
-            </li>
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-trophy text-warning">
-                    </i>
-                </span>
-                Mobile Web Specialist - Google Certification
-            </li>
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-trophy text-warning">
-                    </i>
-                </span>
-                1
-                <sup>st</sup>
-                Place - University of Colorado Boulder - Emerging Tech Competition
-                2009
-            </li>
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-trophy text-warning">
-                    </i>
-                </span>
-                1
-                <sup>st</sup>
-                Place - University of Colorado Boulder - Adobe Creative Jam 2008
-                (UI Design Category)
-            </li>
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-trophy text-warning">
-                    </i>
-                </span>
-                2
-                <sup>nd</sup>
-                Place - University of Colorado Boulder - Emerging Tech Competition
-                2008
-            </li>
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-trophy text-warning">
-                    </i>
-                </span>
-                1
-                <sup>st</sup>
-                Place - James Buchanan High School - Hackathon 2006
-            </li>
-            <li>
-                <span class="fa-li">
-                    <i class="fas fa-trophy text-warning">
-                    </i>
-                </span>
-                3
-                <sup>rd</sup>
-                Place - James Buchanan High School - Hackathon 2005
-            </li>
-        </ul>
-    </div>
-</section>-->
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-700/50">
+            <a href="https://www.linkedin.com/in/hadirezaee/" target="_blank" class="social-btn-sm"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/mhrezaee" target="_blank" class="social-btn-sm"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/DevRezaee" target="_blank" class="social-btn-sm"><i class="fab fa-x-twitter"></i></a>
+        </div>
+    </nav>
 </div>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
+
+<!-- Layout -->
+<div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="hidden lg:flex flex-col fixed left-0 top-0 bottom-0 w-72 xl:w-80 bg-surface-2 border-r border-slate-700/30 z-30">
+        <!-- Profile -->
+        <div class="flex flex-col items-center pt-12 pb-8 px-6">
+            <div class="relative mb-5">
+                <img src="assets/img/profile.jpg" alt="Hadi REZAEE"
+                     class="w-32 h-32 rounded-full object-cover ring-4 ring-accent/40 shadow-lg shadow-accent/10"/>
+                <span class="absolute bottom-1 right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-surface-2" title="Open to opportunities"></span>
+            </div>
+            <h1 class="text-xl font-bold text-white tracking-wide mb-1">Hadi REZAEE</h1>
+            <p class="text-accent-light text-sm font-medium mb-1">Software Architect</p>
+            <p class="text-slate-500 text-xs flex items-center gap-1.5">
+                <i class="fas fa-location-dot text-xs"></i>
+                Vienna, Austria
+            </p>
+        </div>
+
+        <!-- Social -->
+        <div class="flex justify-center gap-2.5 px-6 pb-8">
+            <a href="https://www.linkedin.com/in/hadirezaee/" target="_blank" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/mhrezaee" target="_blank" class="social-btn" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/DevRezaee" target="_blank" class="social-btn" title="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/m.hadi.rezaee/" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+
+        <!-- Nav -->
+        <nav class="flex-1 px-4">
+            <ul class="space-y-0.5">
+                <li>
+                    <a href="#about" class="nav-link active" data-section="about">
+                        <i class="fas fa-user nav-icon"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#experience" class="nav-link" data-section="experience">
+                        <i class="fas fa-briefcase nav-icon"></i>
+                        <span>Experience</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#education" class="nav-link" data-section="education">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Education</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills" class="nav-link" data-section="skills">
+                        <i class="fas fa-code nav-icon"></i>
+                        <span>Skills</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#interests" class="nav-link" data-section="interests">
+                        <i class="fas fa-heart nav-icon"></i>
+                        <span>Interests</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Footer -->
+        <div class="px-6 py-6 border-t border-slate-700/30">
+            <p class="text-slate-600 text-xs text-center">&copy; 2025 Hadi REZAEE</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 lg:ml-72 xl:ml-80 pt-16 lg:pt-0">
+
+        <!-- About -->
+        <section id="about" class="min-h-screen flex items-center px-8 md:px-12 lg:px-16 py-20 lg:py-24 section-reveal">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent-light text-xs font-medium mb-8">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                    Software Architect @ Austrian Airlines
+                </div>
+
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                    Hi, I'm
+                    <span class="bg-gradient-to-r from-accent via-accent-light to-cyan-400 bg-clip-text text-transparent block">
+                        Hadi REZAEE
+                    </span>
+                </h2>
+
+                <p class="text-lg text-slate-400 leading-relaxed mb-10 max-w-2xl">
+                    Technical Strategist &bull; Problem Solver &bull; Lifelong Learner
+                    <br/><br/>
+                    With 15+ years of experience in software development and architecture and a Master's in Computer Software Engineering,
+                    I'm passionate about designing efficient, high-quality solutions to complex problems.
+                    As a Software Architect at Austrian Airlines, I contribute to innovative, high-impact projects with a
+                    technology-agnostic mindset, adapting quickly to new tools to deliver the best outcomes.
+                </p>
+
+                <!-- CTA Links -->
+                <div class="flex flex-wrap gap-4">
+                    <a href="#experience"
+                       class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dim text-white font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5">
+                        View Experience
+                        <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hadirezaee/" target="_blank"
+                       class="inline-flex items-center gap-2 px-6 py-3 border border-slate-600 hover:border-accent/50 text-slate-300 hover:text-white font-medium rounded-lg transition-all duration-200 hover:bg-slate-700/30">
+                        <i class="fab fa-linkedin-in text-sm"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-16 pt-10 border-t border-slate-700/50">
+                    <div>
+                        <div class="text-3xl font-bold text-white">15+</div>
+                        <div class="text-slate-500 text-sm mt-1">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white">7+</div>
+                        <div class="text-slate-500 text-sm mt-1">Companies</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white">M.Sc.</div>
+                        <div class="text-slate-500 text-sm mt-1">Software Engineering</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Experience -->
+        <section id="experience" class="px-8 md:px-12 lg:px-16 py-20 lg:py-24 section-reveal">
+            <div class="max-w-3xl">
+                <div class="section-header mb-14">
+                    <span class="section-tag">Career</span>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+
+                <!-- Timeline -->
+                <div class="relative">
+                    <div class="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-accent via-slate-600 to-transparent ml-2"></div>
+
+                    <div class="space-y-10 pl-10">
+
+                        <!-- Job 1 -->
+                        <div class="timeline-item section-reveal">
+                            <div class="timeline-dot"></div>
+                            <div class="exp-card">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Software Architect</h3>
+                                        <p class="text-accent-light text-sm font-medium mt-0.5">Austrian Airlines &bull; Vienna, Austria</p>
+                                    </div>
+                                    <span class="date-badge">Apr 2025 – Present</span>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-5 leading-relaxed">
+                                    Responsible for designing scalable, secure, and high-performance systems aligned with business objectives.
+                                    Led cross-functional teams, defined architectural standards, and drove technical decisions across the full SDLC.
+                                </p>
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Architecture & Leadership</p>
+                                        <ul class="text-sm text-slate-400 space-y-1">
+                                            <li class="flex gap-2"><i class="fas fa-chevron-right text-accent text-xs mt-1 flex-shrink-0"></i>Designed scalable, cloud-native architectures on Microsoft Azure</li>
+                                            <li class="flex gap-2"><i class="fas fa-chevron-right text-accent text-xs mt-1 flex-shrink-0"></i>Defined system design standards, best practices, and coding guidelines</li>
+                                            <li class="flex gap-2"><i class="fas fa-chevron-right text-accent text-xs mt-1 flex-shrink-0"></i>Led architectural reviews and technical decision-making across teams</li>
+                                            <li class="flex gap-2"><i class="fas fa-chevron-right text-accent text-xs mt-1 flex-shrink-0"></i>Implemented Services and RESTful APIs using ASP.NET Core</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Cloud & DevOps</p>
+                                        <ul class="text-sm text-slate-400 space-y-1">
+                                            <li class="flex gap-2"><i class="fas fa-chevron-right text-accent text-xs mt-1 flex-shrink-0"></i>Architected Azure-based solutions with CI/CD pipelines</li>
+                                            <li class="flex gap-2"><i class="fas fa-chevron-right text-accent text-xs mt-1 flex-shrink-0"></i>Implemented monitoring, logging, and performance optimization strategies</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mt-5">
+                                    <span class="tech-tag">C# / .NET Core</span>
+                                    <span class="tech-tag">ASP.NET Core</span>
+                                    <span class="tech-tag">Azure</span>
+                                    <span class="tech-tag">Azure DevOps</span>
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">SQL Server</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job 2 -->
+                        <div class="timeline-item section-reveal">
+                            <div class="timeline-dot"></div>
+                            <div class="exp-card">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Fullstack Software Developer</h3>
+                                        <p class="text-accent-light text-sm font-medium mt-0.5">Austrian Airlines &bull; Vienna, Austria</p>
+                                    </div>
+                                    <span class="date-badge">Jul 2023 – Apr 2025</span>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                                    Developed and maintained applications, collaborating with cross-functional teams and ensuring high-quality code
+                                    throughout the full software development lifecycle from requirement analysis to deployment.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag">C# / .NET Core</span>
+                                    <span class="tech-tag">ASP.NET MVC</span>
+                                    <span class="tech-tag">Azure</span>
+                                    <span class="tech-tag">Azure DevOps</span>
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">SQL Server</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job 3 -->
+                        <div class="timeline-item section-reveal">
+                            <div class="timeline-dot"></div>
+                            <div class="exp-card">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Senior Software Developer</h3>
+                                        <p class="text-accent-light text-sm font-medium mt-0.5">Austrian Post &bull; Vienna, Austria</p>
+                                    </div>
+                                    <span class="date-badge">Aug 2021 – Jul 2023</span>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                                    Worked on core applications in the delivery systems area, across a wide range of technologies —
+                                    from maintaining legacy projects to building greenfield solutions.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag">C#</span>
+                                    <span class="tech-tag">ASP.NET Core</span>
+                                    <span class="tech-tag">Azure</span>
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">WCF</span>
+                                    <span class="tech-tag">Kendo UI</span>
+                                    <span class="tech-tag">T-SQL</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job 4 -->
+                        <div class="timeline-item section-reveal">
+                            <div class="timeline-dot"></div>
+                            <div class="exp-card">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Tech Lead</h3>
+                                        <p class="text-accent-light text-sm font-medium mt-0.5">Nativy Translations &bull; Vienna, Austria</p>
+                                    </div>
+                                    <span class="date-badge">Jul 2020 – Jul 2021</span>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                                    As CTO: managed 3rd party services, Azure infrastructure, led code reviews,
+                                    participated in design and implementation of new features, and owned the CI/CD deployment pipeline using Azure DevOps.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag">Azure</span>
+                                    <span class="tech-tag">Azure DevOps</span>
+                                    <span class="tech-tag">AWS</span>
+                                    <span class="tech-tag">CI/CD</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job 5 -->
+                        <div class="timeline-item section-reveal">
+                            <div class="timeline-dot"></div>
+                            <div class="exp-card">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Software Developer</h3>
+                                        <p class="text-accent-light text-sm font-medium mt-0.5">Nativy Translations &bull; Vienna, Austria</p>
+                                    </div>
+                                    <span class="date-badge">Aug 2018 – Jun 2020</span>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                                    Implemented new features, maintained and optimized legacy sections, provided technical solutions,
+                                    and participated across requirement, design, development, testing and documentation phases.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag">ASP.NET Web API</span>
+                                    <span class="tech-tag">SQL Server</span>
+                                    <span class="tech-tag">Entity Framework</span>
+                                    <span class="tech-tag">Selenium</span>
+                                    <span class="tech-tag">xUnit</span>
+                                    <span class="tech-tag">Knockout.js</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job 6 -->
+                        <div class="timeline-item section-reveal">
+                            <div class="timeline-dot"></div>
+                            <div class="exp-card">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Senior Software Developer</h3>
+                                        <p class="text-accent-light text-sm font-medium mt-0.5">Fidilio &bull; Tehran, Iran</p>
+                                    </div>
+                                    <span class="date-badge">Aug 2016 – Aug 2018</span>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                                    Developed new features in an Agile team, acted as R&amp;D lead (migrating to .NET Core, Dapper, CI/CD via Jenkins,
+                                    fast search with Algolia), and served as Code Review responsible.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag">ASP.NET Core</span>
+                                    <span class="tech-tag">ASP.NET MVC</span>
+                                    <span class="tech-tag">SQL Server</span>
+                                    <span class="tech-tag">Dapper</span>
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">Jenkins</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job 7 -->
+                        <div class="timeline-item section-reveal">
+                            <div class="timeline-dot"></div>
+                            <div class="exp-card">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Software Developer</h3>
+                                        <p class="text-accent-light text-sm font-medium mt-0.5">Hamrad &bull; Karaj, Iran</p>
+                                    </div>
+                                    <span class="date-badge">Feb 2015 – Jul 2016</span>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                                    Developed various web applications for clients, primarily in the online shopping domain.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag">C#</span>
+                                    <span class="tech-tag">ASP.NET MVC</span>
+                                    <span class="tech-tag">Web API</span>
+                                    <span class="tech-tag">SQL Server</span>
+                                    <span class="tech-tag">jQuery</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Education -->
+        <section id="education" class="px-8 md:px-12 lg:px-16 py-20 lg:py-24 section-reveal">
+            <div class="max-w-3xl">
+                <div class="section-header mb-14">
+                    <span class="section-tag">Academic</span>
+                    <h2 class="section-title">Education</h2>
+                </div>
+
+                <div class="grid gap-6">
+
+                    <div class="edu-card section-reveal">
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-graduation-cap text-accent text-lg"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                                    <div>
+                                        <h3 class="text-white font-bold text-lg">Master of Science</h3>
+                                        <p class="text-accent-light text-sm font-medium mt-0.5">Software Engineering — Data Management</p>
+                                        <p class="text-slate-500 text-sm mt-1">Karaj Azad University (KIAU)</p>
+                                    </div>
+                                    <span class="date-badge">2016 – 2018</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edu-card section-reveal">
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-university text-accent text-lg"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                                    <div>
+                                        <h3 class="text-white font-bold text-lg">Bachelor of Science</h3>
+                                        <p class="text-accent-light text-sm font-medium mt-0.5">Software Engineering</p>
+                                        <p class="text-slate-500 text-sm mt-1">Karaj Azad University (KIAU)</p>
+                                    </div>
+                                    <span class="date-badge">2010 – 2013</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Skills -->
+        <section id="skills" class="px-8 md:px-12 lg:px-16 py-20 lg:py-24 section-reveal">
+            <div class="max-w-3xl">
+                <div class="section-header mb-14">
+                    <span class="section-tag">Expertise</span>
+                    <h2 class="section-title">Skills</h2>
+                </div>
+
+                <!-- Skill Groups -->
+                <div class="space-y-10">
+
+                    <div class="section-reveal">
+                        <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-5">Languages & Frameworks</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="skill-card">
+                                <i class="devicon fa-brands fa-microsoft text-blue-400"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">C# / .NET Core</div>
+                                    <div class="text-slate-500 text-xs">ASP.NET MVC, Web API, WCF</div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-angular text-red-400 text-xl"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">Angular</div>
+                                    <div class="text-slate-500 text-xs">TypeScript, RxJS</div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-react text-cyan-400 text-xl"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">React</div>
+                                    <div class="text-slate-500 text-xs">JavaScript, TypeScript</div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fas fa-database text-emerald-400 text-xl"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">SQL</div>
+                                    <div class="text-slate-500 text-xs">SQL Server, T-SQL, Entity Framework, Dapper</div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-html5 text-orange-400 text-xl"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">HTML / CSS</div>
+                                    <div class="text-slate-500 text-xs">Sass, Bootstrap, Tailwind</div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-js-square text-yellow-400 text-xl"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">JavaScript / TypeScript</div>
+                                    <div class="text-slate-500 text-xs">ES6+, Node, npm</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-reveal">
+                        <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-5">Cloud & DevOps</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="skill-card">
+                                <i class="fab fa-microsoft text-blue-500 text-xl"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">Microsoft Azure</div>
+                                    <div class="text-slate-500 text-xs">App Services, VMs, Storage, SQL</div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fas fa-infinity text-violet-400 text-xl"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">Azure DevOps</div>
+                                    <div class="text-slate-500 text-xs">CI/CD Pipelines, Boards</div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-git-alt text-orange-500 text-xl"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">Git</div>
+                                    <div class="text-slate-500 text-xs">GitHub, branching strategies</div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fab fa-aws text-amber-400 text-xl"></i>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">AWS</div>
+                                    <div class="text-slate-500 text-xs">Cloud services</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-reveal">
+                        <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-5">Workflow & Practices</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="workflow-badge"><i class="fas fa-check-circle text-accent text-xs"></i> Clean Code</span>
+                            <span class="workflow-badge"><i class="fas fa-check-circle text-accent text-xs"></i> Design Patterns</span>
+                            <span class="workflow-badge"><i class="fas fa-check-circle text-accent text-xs"></i> Agile / Scrum</span>
+                            <span class="workflow-badge"><i class="fas fa-check-circle text-accent text-xs"></i> Cross-Functional Teams</span>
+                            <span class="workflow-badge"><i class="fas fa-check-circle text-accent text-xs"></i> Code Review</span>
+                            <span class="workflow-badge"><i class="fas fa-check-circle text-accent text-xs"></i> TDD</span>
+                            <span class="workflow-badge"><i class="fas fa-check-circle text-accent text-xs"></i> System Architecture</span>
+                            <span class="workflow-badge"><i class="fas fa-check-circle text-accent text-xs"></i> Technical Leadership</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Interests -->
+        <section id="interests" class="px-8 md:px-12 lg:px-16 py-20 lg:py-24 section-reveal">
+            <div class="max-w-3xl">
+                <div class="section-header mb-14">
+                    <span class="section-tag">Personal</span>
+                    <h2 class="section-title">Interests</h2>
+                </div>
+
+                <p class="text-slate-400 leading-relaxed mb-10">
+                    Apart from being a developer, I enjoy most of my time learning new skills. I watch movies, and I'm currently learning German.
+                    After work you can find me either in the gym or in a coffee shop.
+                    I'm not a great chess player, but I enjoy it — and I love listening to classical music.
+                </p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div class="interest-card section-reveal">
+                        <i class="fas fa-book text-accent text-2xl mb-3"></i>
+                        <span class="text-white text-sm font-medium">Lifelong Learning</span>
+                    </div>
+                    <div class="interest-card section-reveal">
+                        <i class="fas fa-film text-accent text-2xl mb-3"></i>
+                        <span class="text-white text-sm font-medium">Movies</span>
+                    </div>
+                    <div class="interest-card section-reveal">
+                        <i class="fas fa-language text-accent text-2xl mb-3"></i>
+                        <span class="text-white text-sm font-medium">German Language</span>
+                    </div>
+                    <div class="interest-card section-reveal">
+                        <i class="fas fa-dumbbell text-accent text-2xl mb-3"></i>
+                        <span class="text-white text-sm font-medium">Gym</span>
+                    </div>
+                    <div class="interest-card section-reveal">
+                        <i class="fas fa-chess text-accent text-2xl mb-3"></i>
+                        <span class="text-white text-sm font-medium">Chess</span>
+                    </div>
+                    <div class="interest-card section-reveal">
+                        <i class="fas fa-music text-accent text-2xl mb-3"></i>
+                        <span class="text-white text-sm font-medium">Classical Music</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="px-8 md:px-12 lg:px-16 py-10 border-t border-slate-700/30 text-center">
+            <p class="text-slate-600 text-sm">
+                &copy; 2025 Hadi REZAEE &bull; Vienna, Austria
+            </p>
+        </footer>
+
+    </main>
+</div>
+
 <script src="js/scripts.js"></script>
 </body>
 </html>
