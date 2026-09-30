@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Base title="Page not found · Hadi Rezaee">
+  <main id="main" class="container-page grid min-h-dvh place-items-center text-center">
+    <div>
+      <p class="font-mono text-sm text-accent">404</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl">Page not found</h1>
+      <p class="mx-auto mt-4 max-w-md text-muted">The page you're looking for doesn't exist or was moved.</p>
+      <a href="/" class="mt-8 inline-flex items-center gap-2 rounded-lg border border-line px-4 py-2 text-sm transition-colors hover:border-line-strong">
+        <Icon name="lucide:arrow-left" class="size-4" />
+        Back to the resume
+      </a>
+    </div>
+  </main>
+</Base>

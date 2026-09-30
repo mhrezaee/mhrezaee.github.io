@@ -1,0 +1,242 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------
+   Design tokens — themed via CSS variables, exposed to Tailwind below
+   ------------------------------------------------------------------ */
+:root {
+  --bg: #fafaf9;
+  --surface: rgb(255 255 255 / 0.7);
+  --surface-strong: #ffffff;
+  --fg: #0b0b0d;
+  --fg-muted: #4b4b53;
+  --fg-subtle: #71717a;
+  --line: rgb(9 9 11 / 0.09);
+  --line-strong: rgb(9 9 11 / 0.16);
+  --accent: #047857;
+  --glow: rgb(16 185 129 / 0.1);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a0a0c;
+  --surface: rgb(24 24 28 / 0.6);
+  --surface-strong: #141418;
+  --fg: #f4f4f5;
+  --fg-muted: #a8a8b0;
+  --fg-subtle: #75757e;
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.15);
+  --accent: #34d399;
+  --glow: rgb(52 211 153 / 0.08);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-subtle: var(--fg-subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+}
+
+@theme {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-bg font-sans text-fg;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 28%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Lenis */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Components
+   ------------------------------------------------------------------ */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .icon-btn {
+    @apply grid size-9 place-items-center rounded-lg border border-line bg-surface text-muted transition-colors duration-300 hover:border-line-strong hover:text-fg;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-md border border-line bg-surface px-2 py-1 font-mono text-[11px] leading-none text-muted;
+  }
+}
+
+/* Soft glow behind the header area */
+.page-glow {
+  background: radial-gradient(50% 60% at 50% 0%, var(--glow), transparent 70%);
+}
+
+/* ------------------------------------------------------------------
+   Motion
+   ------------------------------------------------------------------ */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  transition:
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.8s var(--ease-out-expo);
+  transition-delay: var(--delay, 0ms);
+}
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-intro] {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  animation: intro 0.9s var(--ease-out-expo) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+@keyframes intro {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reading progress (scroll-driven animation, progressive enhancement) */
+.scroll-progress {
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: progress linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes progress {
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
+/* Theme toggle — circular reveal via View Transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .scroll-progress {
+    display: none;
+  }
+  .js [data-reveal],
+  .js [data-intro] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Print / "Save as PDF" — a clean one-column CV
+   ------------------------------------------------------------------ */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 14mm 16mm;
+  }
+
+  :root,
+  .dark {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-strong: #ffffff;
+    --fg: #111113;
+    --fg-muted: #3f3f46;
+    --fg-subtle: #6b6b73;
+    --line: #e4e4e7;
+    --line-strong: #d4d4d8;
+    --accent: #047857;
+    color-scheme: light;
+  }
+
+  html {
+    font-size: 12.5px;
+  }
+
+  .no-print,
+  .page-decor,
+  .scroll-progress {
+    display: none !important;
+  }
+
+  .js [data-reveal],
+  .js [data-intro] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .container-page {
+    max-width: none;
+    padding: 0;
+  }
+
+  .avoid-break {
+    break-inside: avoid;
+  }
+
+  .keep-with-next {
+    break-after: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,60 @@
+---
+import Icon from './Icon.astro';
+import Section from './Section.astro';
+import { skillGroups, practices } from '../data/profile';
+
+const groupIcons: Record<string, string> = {
+  Backend: 'lucide:server',
+  Frontend: 'lucide:monitor-smartphone',
+  'Cloud & DevOps': 'lucide:cloud-cog',
+  'AI Engineering': 'lucide:sparkles',
+};
+---
+
+<Section id="skills" title="Skills">
+  <div class="grid gap-4 sm:grid-cols-2 print:grid-cols-2 print:gap-3">
+    {
+      skillGroups.map((group, gi) => {
+        const ai = group.title.startsWith('AI');
+        return (
+          <div
+            data-reveal
+            style={`--delay:${(gi % 2) * 70}ms`}
+            class:list={[
+              'avoid-break rounded-2xl border p-5 sm:p-6 print:rounded-lg print:p-3',
+              ai ? 'border-accent/30 bg-accent/[0.05]' : 'border-line bg-surface',
+            ]}
+          >
+            <h3 class="flex items-center gap-2 text-sm font-semibold">
+              <Icon name={groupIcons[group.title] ?? 'lucide:layers'} class="size-4 text-accent" />
+              {group.title}
+            </h3>
+            <ul class="mt-4 space-y-3 print:mt-2 print:space-y-1.5">
+              {group.skills.map((s) => (
+                <li class="flex items-center gap-3">
+                  <span class="grid size-9 shrink-0 place-items-center rounded-lg border border-line bg-bg print:size-6">
+                    <Icon name={s.icon} class="size-4 print:size-3" />
+                  </span>
+                  <div class="min-w-0">
+                    <p class="text-sm leading-tight font-medium">{s.name}</p>
+                    <p class="mt-0.5 text-xs leading-tight text-subtle">{s.note}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <div data-reveal class="avoid-break mt-4 rounded-2xl border border-line bg-surface p-5 sm:p-6 print:mt-3 print:rounded-lg print:p-3">
+    <h3 class="flex items-center gap-2 text-sm font-semibold">
+      <Icon name="lucide:workflow" class="size-4 text-accent" />
+      Practices
+    </h3>
+    <ul class="mt-4 flex flex-wrap gap-2 print:mt-2">
+      {practices.map((p) => <li class="chip !px-2.5 !py-1.5 !text-xs">{p}</li>)}
+    </ul>
+  </div>
+</Section>

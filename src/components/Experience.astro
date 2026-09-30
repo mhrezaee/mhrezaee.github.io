@@ -1,0 +1,122 @@
+---
+import Icon from './Icon.astro';
+import Section from './Section.astro';
+import { experience } from '../data/profile';
+import { monthsIn, formatMonths } from '../lib/dates';
+
+const now = new Date();
+
+const initials = (name: string) =>
+  name
+    .split(' ')
+    .map((w) => w[0])
+    .join('')
+    .slice(0, 2);
+---
+
+<Section id="experience" title="Experience" meta="15+ years · 7+ companies">
+  <ol class="space-y-5 print:space-y-4">
+    {
+      experience.map((company) => {
+        const total = company.roles.reduce((sum, r) => sum + monthsIn(r.period, now), 0);
+        return (
+          <li
+            data-reveal
+            class:list={[
+              'rounded-2xl border p-5 sm:p-7 print:rounded-none print:border-0 print:p-0 print:shadow-none',
+              company.current ? 'border-line-strong bg-surface-strong shadow-[0_1px_2px_rgb(0_0_0/0.04),0_12px_32px_-16px_rgb(0_0_0/0.18)]' : 'border-line bg-surface',
+            ]}
+          >
+            <header class="keep-with-next flex items-center gap-4">
+              <span
+                class:list={[
+                  'grid size-11 shrink-0 place-items-center rounded-xl border font-mono text-sm font-semibold print:size-8 print:text-xs',
+                  company.current ? 'border-accent/30 bg-accent/10 text-accent' : 'border-line bg-bg text-fg',
+                ]}
+              >
+                {initials(company.name)}
+              </span>
+              <div class="min-w-0 flex-1">
+                <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                  <h3 class="text-lg font-semibold tracking-tight">{company.name}</h3>
+                  {company.current && (
+                    <span class="rounded-full bg-accent/10 px-2 py-0.5 text-[11px] font-medium text-accent">Current</span>
+                  )}
+                </div>
+                <p class="mt-0.5 text-sm text-subtle">
+                  {company.location} · {formatMonths(total)}
+                </p>
+              </div>
+            </header>
+
+            <ol class="relative mt-6 space-y-7 print:mt-3 print:space-y-4">
+              {company.roles.length > 1 && (
+                <span aria-hidden="true" class="absolute top-2 bottom-2 left-[5px] w-px bg-line-strong print:hidden" />
+              )}
+              {company.roles.map((role, i) => (
+                <li class:list={['relative', company.roles.length > 1 && 'pl-7 print:pl-0']}>
+                  {company.roles.length > 1 && (
+                    <span
+                      aria-hidden="true"
+                      class:list={[
+                        'absolute top-1.5 left-0 size-[11px] rounded-full border-2 print:hidden',
+                        company.current && i === 0 ? 'border-accent bg-accent' : 'border-line-strong bg-bg',
+                      ]}
+                    />
+                  )}
+                  <div class="keep-with-next flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                    <h4 class="font-semibold">{role.title}</h4>
+                    <p class="text-sm whitespace-nowrap text-subtle tabular-nums">
+                      {role.period}
+                      <span class="text-line-strong"> · </span>
+                      {formatMonths(monthsIn(role.period, now))}
+                    </p>
+                  </div>
+                  <p class="keep-with-next mt-2 leading-relaxed text-pretty text-muted">{role.summary}</p>
+
+                  {role.highlights && (
+                    <div class="mt-5 space-y-3 print:mt-3 print:space-y-2">
+                      {role.highlights.map((h) => {
+                        const ai = h.heading.startsWith('AI');
+                        return (
+                          <div
+                            class:list={[
+                              'avoid-break rounded-xl border p-4',
+                              ai ? 'border-accent/30 bg-accent/[0.05]' : 'border-line bg-bg/40',
+                            ]}
+                          >
+                            <p class="flex items-center gap-2 text-sm font-semibold">
+                              <Icon
+                                name={ai ? 'lucide:sparkles' : h.heading.startsWith('Cloud') ? 'lucide:cloud' : 'lucide:layers'}
+                                class="size-4 text-accent"
+                              />
+                              {h.heading}
+                            </p>
+                            <ul class:list={['mt-3 grid gap-x-6 gap-y-2 print:gap-y-1', !ai && 'sm:grid-cols-2 print:grid-cols-2']}>
+                              {h.items.map((item) => (
+                                <li class="flex gap-2.5 text-sm leading-relaxed text-muted">
+                                  <Icon name="lucide:check" class="mt-1 size-3.5 shrink-0 text-accent" />
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies">
+                    {role.tech.map((t) => (
+                      <li class="chip">{t}</li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+          </li>
+        );
+      })
+    }
+  </ol>
+</Section>

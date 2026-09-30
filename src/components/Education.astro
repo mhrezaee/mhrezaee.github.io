@@ -1,0 +1,31 @@
+---
+import Icon from './Icon.astro';
+import Section from './Section.astro';
+import { education, interests } from '../data/profile';
+---
+
+<Section id="education" title="Education">
+  <ol class="grid gap-4 sm:grid-cols-2 print:grid-cols-2 print:gap-3">
+    {
+      education.map((e, i) => (
+        <li data-reveal style={`--delay:${i * 70}ms`} class="avoid-break flex gap-4 rounded-2xl border border-line bg-surface p-5 sm:p-6 print:rounded-lg print:p-3">
+          <span class="grid size-10 shrink-0 place-items-center rounded-xl border border-line bg-bg text-accent print:size-8">
+            <Icon name="lucide:graduation-cap" class="size-5 print:size-4" />
+          </span>
+          <div class="min-w-0">
+            <p class="font-mono text-xs text-subtle">{e.period}</p>
+            <h3 class="mt-1 leading-snug font-semibold">{e.degree}</h3>
+            <p class="mt-1 text-sm text-muted">{e.school}</p>
+            {e.field && <p class="mt-0.5 text-sm text-subtle">Focus: {e.field}</p>}
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</Section>
+
+<Section id="interests" title="Interests">
+  <ul data-reveal class="flex flex-wrap gap-2">
+    {interests.map((it) => <li class="rounded-full border border-line bg-surface px-3 py-1 text-sm text-muted print:text-xs">{it}</li>)}
+  </ul>
+</Section>

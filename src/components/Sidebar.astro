@@ -1,0 +1,109 @@
+---
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import portrait from '../assets/headshot.jpg';
+import { profile, socials } from '../data/profile';
+
+const nav = [
+  { href: '#profile', label: 'Profile' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#education', label: 'Education' },
+];
+---
+
+<!-- Mobile top bar -->
+<div class="no-print sticky top-0 z-40 -mx-5 flex h-14 items-center justify-between border-b border-line bg-bg/80 px-5 backdrop-blur-xl sm:-mx-8 sm:px-8 lg:hidden">
+  <span class="text-sm font-semibold tracking-tight">{profile.name}</span>
+  <div class="flex items-center gap-2">
+    <button data-theme-toggle type="button" class="icon-btn" aria-label="Toggle color theme">
+      <Icon name="lucide:sun" class="hidden size-4 dark:block" />
+      <Icon name="lucide:moon" class="size-4 dark:hidden" />
+    </button>
+    <button data-print type="button" class="icon-btn" aria-label="Save as PDF">
+      <Icon name="lucide:file-down" class="size-4" />
+    </button>
+  </div>
+</div>
+
+<aside class="pt-10 pb-4 lg:sticky lg:top-0 lg:flex lg:h-dvh lg:flex-col lg:justify-between lg:py-16 print:static print:h-auto print:p-0">
+  <div>
+    <div data-intro class="flex items-center gap-5 lg:block">
+      <div class="relative w-fit shrink-0">
+        <Image
+          src={portrait}
+          alt={`Portrait of ${profile.name}`}
+          widths={[112, 224]}
+          sizes="112px"
+          loading="eager"
+          fetchpriority="high"
+          class="size-20 rounded-2xl object-cover ring-1 ring-line-strong sm:size-24 lg:size-28 print:size-20"
+        />
+        <span class="absolute -right-1 -bottom-1 grid size-6 place-items-center rounded-full bg-bg print:hidden" title={`Currently at ${profile.company}`}>
+          <span class="size-3 rounded-full bg-accent ring-4 ring-accent/20"></span>
+        </span>
+      </div>
+      <div class="lg:mt-7">
+        <h1 class="text-3xl leading-tight font-semibold tracking-[-0.035em] sm:text-4xl lg:text-[2.6rem]">{profile.name}</h1>
+        <p class="mt-1.5 text-base text-fg/90 sm:text-lg">
+          {profile.role}{' '}<span class="text-subtle">at</span>{' '}{profile.company}
+        </p>
+        <p class="mt-1 inline-flex items-center gap-1.5 text-sm text-subtle">
+          <Icon name="lucide:map-pin" class="size-3.5" />
+          {profile.location}
+        </p>
+      </div>
+    </div>
+
+    <p data-intro style="--delay:80ms" class="mt-6 max-w-sm leading-relaxed text-pretty text-muted print:hidden">{profile.headline}</p>
+
+    <nav data-intro style="--delay:140ms" aria-label="Sections" class="no-print mt-14 hidden lg:block">
+      <ul class="space-y-1">
+        {
+          nav.map((n, i) => (
+            <li>
+              <a href={n.href} data-nav-link class="group flex items-center gap-4 py-2 text-sm text-subtle transition-colors duration-300 hover:text-fg data-[active]:text-fg">
+                <span class="font-mono text-[11px]">0{i + 1}</span>
+                <span class="h-px w-8 bg-line-strong transition-all duration-500 ease-out-expo group-hover:w-14 group-hover:bg-fg group-data-[active]:w-14 group-data-[active]:bg-accent" />
+                <span class="font-medium tracking-wide">{n.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <div data-intro style="--delay:200ms" class="mt-8 lg:mt-0">
+    <ul class="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap lg:grid lg:grid-cols-2 print:flex print:flex-wrap" aria-label="Profiles">
+      {
+        socials.map((s) => (
+          <li>
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener"
+              class="group flex items-center gap-2.5 rounded-lg border border-line bg-surface px-3 py-2 text-sm text-muted transition-all duration-300 hover:border-line-strong hover:text-fg"
+            >
+              <Icon name={s.icon} class="size-3.5 shrink-0" />
+              <span class="print:hidden">{s.label}</span>
+              <span class="hidden print:inline">{s.href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</span>
+              <Icon name="lucide:arrow-up-right" class="ml-auto size-3.5 opacity-0 transition-all duration-300 group-hover:opacity-100 print:hidden" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="no-print mt-6 hidden items-center gap-2 lg:flex">
+      <button data-print type="button" class="inline-flex h-10 flex-1 items-center justify-center gap-2 rounded-lg bg-fg px-4 text-sm font-medium text-bg transition-opacity hover:opacity-90">
+        <Icon name="lucide:file-down" class="size-4" />
+        Download CV
+      </button>
+      <button data-theme-toggle type="button" class="icon-btn !size-10" aria-label="Toggle color theme">
+        <Icon name="lucide:sun" class="hidden size-4 dark:block" />
+        <Icon name="lucide:moon" class="size-4 dark:hidden" />
+      </button>
+    </div>
+  </div>
+</aside>

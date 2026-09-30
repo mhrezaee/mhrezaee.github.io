@@ -1,0 +1,29 @@
+---
+// Build-time SVG icons from Iconify sets — zero runtime JS, no icon font.
+import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
+import lucide from '@iconify-json/lucide/icons.json';
+import simpleIcons from '@iconify-json/simple-icons/icons.json';
+
+interface Props {
+  name: string;
+  class?: string;
+  size?: number | string;
+  label?: string;
+}
+
+const { name, class: className, size = '1em', label } = Astro.props;
+const sets = { lucide, 'simple-icons': simpleIcons } as const;
+const [prefix, iconName] = name.split(':') as [keyof typeof sets, string];
+const set = sets[prefix];
+const data = set && getIconData(set as any, iconName);
+if (!data) throw new Error(`Icon not found: ${name}`);
+
+const { attributes, body } = iconToSVG(data, { height: size });
+const html = iconToHTML(replaceIDs(body), {
+  ...attributes,
+  class: className ?? '',
+  ...(label ? { role: 'img', 'aria-label': label } : { 'aria-hidden': 'true' }),
+});
+---
+
+<Fragment set:html={html} />
